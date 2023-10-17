@@ -15,6 +15,6 @@ jobs:
           username: aridane
           key: ${{secrets.PRIVATE_KEY}}
           script: |
-            cd /var/www/html/myapp
+            cd /var/www/html/dpl_server_aridane
             git pull origin main
             npm run build
