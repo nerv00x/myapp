@@ -15,6 +15,6 @@ jobs:
           username: aridane
           key: ${{secrets.PRIVATE_KEY}}
           script: |
-            cd /var/www/html/reddit_2324
+            cd /var/www/html/myapp
             git pull origin main
             npm run build
