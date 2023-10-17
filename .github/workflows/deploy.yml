@@ -1,0 +1,20 @@
+name: deploy
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: debian-12
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: 217.71.205.6
+          port: 2222
+          username: aridane
+          keys: ${{secrets.PRIVATE_KEY}}
+          script: |
+            cd /var/www/html/reddit_2324
+            git pull origin main
+            npm run build
